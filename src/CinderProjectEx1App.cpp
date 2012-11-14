@@ -38,11 +38,12 @@ class CinderProjectEx1App : public AppBasic {
 	int	mClusterColorsSize;
 
 	cv::Mat		mColorSamples;
-	
+	bool		mShowBlendedMask;
 };
 
 void CinderProjectEx1App::setup()
 {
+	mShowBlendedMask = true;
 	// list out the devices, then try to use first one (for dev purposes)
 	vector<Capture::DeviceRef> devices( Capture::getDevices() );
 	if(!devices.empty()) {
@@ -93,7 +94,9 @@ void CinderProjectEx1App::keyDown( KeyEvent event ) {
 			mClusterColors = new Color8u[mClusterColorsSize * 2];
 			mClusterColorsSize *= 2;
 		}
-    }
+    } else if (event.getChar() == 'm') {
+		mShowBlendedMask = !mShowBlendedMask;
+	}
 	
 	if(changed) {
 		updateColorPalette();
@@ -121,7 +124,8 @@ void CinderProjectEx1App::draw()
 	if( mTexture.getHeight() != 0 )
 		gl::draw( mTexture, Rectf( x, y, width, height ) );
 	
-	drawBlendedMask();
+	if(mShowBlendedMask)
+		drawBlendedMask();
 }
 
 void CinderProjectEx1App::updateColorPalette() {
