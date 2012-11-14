@@ -134,9 +134,9 @@ void CinderProjectEx1App::updateColorPalette() {
 }
 
 void CinderProjectEx1App::drawBlendedMask() {
-	float r = sin( getElapsedSeconds()*0.01f) * 0.5f + 0.5f;
-	float g = sin( getElapsedSeconds()*0.01f + 90 ) * 0.5f + 0.5f;
-	float b = sin( getElapsedSeconds()*0.01f + 180 ) * 0.5f + 0.5f;
+	float r = sin( getElapsedSeconds() ) * 0.5f + 0.5f;
+	float g = sin( getElapsedSeconds() + 45) * 0.5f + 0.5f;
+	float b = sin( getElapsedSeconds() + 90) * 0.5f + 0.5f;
 
 	gl::color( r, g, b, 0.05f );
 	Vec3f center = Vec3f( getWindowWidth()/2 , getWindowHeight()/2, 0.0f); 

@@ -1,4 +1,4 @@
-﻿Build started 11/13/2012 5:20:45 PM.
+﻿Build started 11/13/2012 5:29:19 PM.
      1>Project "D:\code\CinderProjectEx1\vc10\CinderProjectEx1.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Release\CinderProjectEx1.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -39,4 +39,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:05.77
+Time Elapsed 00:00:05.74
